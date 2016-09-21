@@ -1,0 +1,31 @@
+<style>
+    table tbody tr:hover{
+        background-color:#b2ebf2;
+    }
+    </style>
+<participant-search (notify)='onNotify($event)'></participant-search>
+
+<div class="row">
+    <table class="striped blue-grey lighten-4">
+        <thead>
+          <tr>
+              <th data-field="participant_id">PARTICIPANT ID</th>
+              <th data-field="screening_id">SCREENING ID</th>
+              <th data-field="subject_id">SUBJECT ID</th>
+              <th data-field="first_name">FIRST NAME</th>
+              <th data-field="last_name">LAST NAME</th>
+              <th data-field="middle_name">MIDDLE NAME</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let p of list">
+                <td><a href="profile/{{p.participant_id}}">{{p.participant_id}}</a></td>
+                <td>{{p.screening_id}}</td>
+                <td>{{p.subject_id}}</td>
+                <td>{{p.first_name}}</td>
+                <td>{{p.last_name}}</td>
+                <td>{{p.middle_name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

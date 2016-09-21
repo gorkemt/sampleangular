@@ -1,0 +1,57 @@
+<div class="row">
+    <div class="card-panel  light-blue lighten-5 red-text col s6 m12">
+        <span class="card-title blue-text"><h5>PHONE LOG</h5></span>
+        <div class="row">
+
+            <div class="input-field col s3">
+
+                <input id="attempt_date" type="text" class="validate" name="attempt_date" [(ngModel)]="new_attempt_date">
+                <label for="attempt_date">ATTEMPT DATE</label>
+            </div>
+
+            <div class="input-field col s3">
+                <select>
+                    <option value="">Attempt Status</option>
+                    <option value="1">Left voicemail message</option>
+                    <option value="2">Left message with relative/friend</option>
+                    <option value="3">Unable to leave message</option>
+                    <option value="4">Participant will call back</option>
+                    <option value="5">No longer wants to be contacted</option>
+                    <option value="6">Phone disconnected/not a working number</option>
+                    <option value="7">Unable to contact</option>
+                </select>
+                <label for="status">ATTEMPT STATUS</label>
+            </div>
+            <div class="">
+                
+                <select [ngModel]="fx" name="sel4"> 
+                    <option [ngValue]="n" *ngFor="let n of attempt_statuses" >{{n.name}}</option>
+                </select>    
+                <span>sta: {{fx.name}}</span>
+            </div>
+
+            <div class="input-field col s2">
+
+                <input id="next_call_date" type="text" class="validate" name="next_call_date" [(ngModel)]="new_next_call_date">
+                <label for="next_call_date">NEXT CALL DATE</label>
+            </div>
+
+            <div class="input-field col s6 m6 l2">
+                <button class="btn waves-effect waves-light pink lighten-2" type="submit" name="action" (click)='addPhoneLog()'>ADD
+                    </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="card-panel col brown lighten-3 s8 m8" *ngFor="let pl of phone_logs">
+        <span class="card-title">Attempt {{pl.attempt}}</span>
+        <span>
+                   <div> Attempt Date: {{pl.attempt_date}}</div>
+                   <div> Attempt Note: {{pl.note.note}}</div>
+                   <div> Attempt Status: {{pl.attempt_status}}</div>
+                   <div> Next Call Date: {{pl.next_call_date}}</div>
+            </span>
+    </div>
+</div>

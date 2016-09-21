@@ -1,0 +1,53 @@
+<div class="row">
+    <div class="card-panel orange lighten-3 col s12 m12 blue-text">
+        <span class="card-title white-text"><h5>PARTICIPANT SCREENING</h5></span>
+
+        <div class="input-field col s6">
+            <input type="date" name="hidden_date" [(ngModel)]="hidden_date" (change)="changeDate()" />
+            <input type="text" id="screening_date" name="screening_date" [(ngModel)]="screening_date" style="display:none" (change)="changeDate2()"
+            />
+        </div>
+
+        <div class="input-field col s6">
+            <input type="text" id="question_age" class="validate" pattern="[0-9]{2}" [(ngModel)]="question_age" />
+            <label for="question_age">How old are you?</label>
+        </div>
+
+        <div class="input-field col s6">
+            <input type="text" id="how_many_years" class="validate" pattern="[0-9](2)" [(ngModel)]="how_many_years" />
+            <label for="how_many_years">How long have you been smoking?</label>
+        </div>
+
+        <div class="input-field col s6">
+            <input type="text" id="how_many_per_week" class="validate" pattern="[0-9]{2}" [(ngModel)]="how_many_per_week" />
+            <label for="how_many_per_week">How many cigarettes per week do you smoke?</label>
+        </div>
+
+        <div class="input-field col s6">
+            <select name="smoking_rate_uom" [(ngModel)]="smoking_rate_uom">
+                        <option value="" >Choose your option</option>
+                        <option value="1">DAY</option>
+                        <option value="2">WEEK</option>
+                    </select>
+            <label for="smoking_rate_uom">per DAY/WEEK ?</label>
+        </div>
+
+        <div class="input-field col s6">
+            <select name="enrolled_to_quit_smoking" [(ngModel)]="enrolled_to_quit_smoking">
+                        <option value="" >Choose your option</option>
+                        <option value="0">YES</option>
+                        <option value="1">NO</option>
+                    </select>
+            <label for="enrolled_to_quit_smoking">Are you currently enrolled in a face-to face smoking cessation program?</label>
+        </div>
+
+        <div class="input-field col s6">
+            <select name="preferred_delivery_language" [(ngModel)]="preferred_delivery_language">
+                        <option value="" >Choose your option</option>
+                        <option value="0">Spanish</option>
+                        <option value="1">English</option>
+                    </select>
+            <label for="enrolled_to_quit_smoking">In what language do you prefer your education health materials?</label>
+        </div>
+    </div>
+</div>

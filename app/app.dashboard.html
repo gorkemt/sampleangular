@@ -1,0 +1,11 @@
+
+  <nav>
+    <div class="nav-wrapper z-depth-1 hoverable light-blue darken-4 col s4">
+      <a href="#" class="brand-logo left">SPANISH STATE GRANT</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li *ngFor="let tab of tabs">
+            <a href="{{tab.url}}">{{tab.name}}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>

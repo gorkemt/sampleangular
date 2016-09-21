@@ -1,0 +1,159 @@
+<div class="row ">
+  <!--<form class="col l6" style="font-size:14px;font-weight:bold;"> -->
+  
+  <div class="row">
+    <div class="card-panel light-blue lighten-5 red-text col s6 m12">
+      <span class="card-title blue-text"><h5>PARTICIPANT INFORMATION</h5></span>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <input placeholder="First Name" id="first_name" type="text" class="validate" name="first_name" [(ngModel)]="participant.first_name">
+          <label for="first_name">FIRST NAME</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="middle_name" type="text" class="validate" name="middle_name" [(ngModel)]="participant.middle_name">
+          <label for="middle_name">MIDDLE NAME</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate" name="last_name" [(ngModel)]="participant.last_name">
+          <label for="last_name">LAST NAME</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="second_last_name" type="text" class="validate" name="second_last_name" [(ngModel)]="participant.second_last_name">
+          <label for="second_last_name">2nd LAST NAME</label>
+        </div>
+        <div class="input-field col s4">
+          gender:{{participant.gender}}
+          <select name="gender" [(ngModel)]="participant.gender">
+            <option value="" >Choose your option</option>
+            <option value="1">FEMALE</option>
+            <option value="2">MALE</option>
+          </select>
+          <label>GENDER</label>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="row">
+    <div class="card-panel light-blue lighten-5 red-text col s6 m12">
+      <span class="card-title blue-text"><h5>CONTACT INFORMATION</h5></span>
+
+      <div class="row">
+
+        <div class="input-field col s4">
+
+          <input id="home_phone" type="tel" class="validate" pattern="[0-9]{10}" name="home_phone" [(ngModel)]="participant.home_phone">
+          <label for="home_phone">HOME PHONE</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="mobile_phone" type="tel" class="validate" pattern="[0-9]{10}" name="mobile_phone" [(ngModel)]="participant.mobile_phone">
+          <label for="mobile_phone">MOBILE PHONE</label>
+        </div>
+        <div class="input-field col s4">
+          <input id="alternative_phone" type="tel" class="validate" pattern="[0-9]{10}" name="alternative_phone" [(ngModel)]="participant.alternative_phone">
+          <label for="alternative_phone">ALTERNATIVE PHONE</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s4">
+          <input id="email" type="email" class="validate" [(ngModel)]="participant.email">
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field col s2">
+          <select name="contact_hour" [(ngModel)]="participant.contact_hour">
+            <option value="">Hour</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+          </select>
+          <label for="contact_hour">HOUR</label>
+        </div>
+        <div class="input-field col s2">
+          <select name="contact_mins" [(ngModel)]="participant.contact_mins">
+            <option value="1">00</option>
+            <option value="2">30</option>
+          </select>
+          <label for="contact_mins">MINUTE</label>
+        </div>
+        <div class="input-field col s2">
+          <select name="contact_timezone" [(ngModel)]="participant.contact_timezone">
+            <option value="1">Eastern</option>
+            <option value="2">Central</option>
+            <option value="3">Mountain</option>
+            <option value="4">Pacific</option>
+            <option value="5">Atlantic</option>
+          </select>
+          <label for="contact_timezone">MINUTE</label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field col s6">
+          <p>
+            <input type="checkbox" id="email_assessment" name="email_assessment" [(ngModel)]="participant.email_assessment" />
+            <label for="email_assessment">EMAIL ASSESSMENT</label>
+          </p>
+        </div>
+        <div class="input-field col s6">
+          <p>
+            <input type="checkbox" id="opt_for_ebook" name="opt_for_ebook" [(ngModel)]="participant.opt_for_ebook" />
+            <label for="opt_for_ebook">OPT FOR ELECTRONIC BOOKS</label>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="card-panel  light-blue lighten-5 red-text col s6 m12">
+      <span class="card-title blue-text"><h5>PARTICIPANT ADDRESS</h5></span>
+      <div class="row">
+        <div class="input-field col s3">
+
+          <input id="address1" type="text" class="validate" name="address" [(ngModel)]="participant.address.address1">
+          <label for="address1">ADDRESS1</label>
+        </div>
+        <div class="input-field col s3">
+
+          <input id="address2" type="text" class="validate" name="address2" [(ngModel)]="participant.address.address2">
+          <label for="address2">ADDRESS2</label>
+        </div>
+        <div class="input-field col s2">
+
+          <input id="city" type="text" class="validate" name="city" [(ngModel)]="participant.address.city">
+          <label for="city">CITY</label>
+        </div>
+        <div class="input-field col s2">
+
+          <input id="state" type="text" class="validate" name="state" [(ngModel)]="participant.address.state">
+          <label for="state">STATE</label>
+        </div>
+        <div class="input-field col s3">
+
+          <input id="zipcode" type="text" class="validate" maxlength="2" name="zipcode" [(ngModel)]="participant.address.zip_code">
+          <label for="zipcode">ZIP CODE</label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- </form> -->
+  <div class="row">
+    <phone-log [notes]="participant.notes" [phone_logs]="participant.phone_logs"></phone-log>
+  </div>
+  <div class="row">
+    <dx></dx>
+  </div>
+</div>

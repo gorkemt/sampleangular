@@ -1,0 +1,43 @@
+<style>
+    .track-progress {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    .track-progress div {
+        list-style-type: none;
+        display: inline-block;
+        /*border:1px solid black;*/
+        position: relative;
+        margin: 5px;
+        padding: 0;
+        text-align: center;
+        line-height: 30px;
+        height: 30px;
+        /*background-color: #f0f0f0;*/
+    }
+</style>
+<div class="row">
+    
+
+    <div class="card col brown lighten-3 white-text s8 m8">
+        <span class="card-title">{{title}}</span>
+        <div class="card-content">
+            <div class="row">
+                <ol class="track-progress">
+                    <li *ngFor="let phase of phases" [style.width]="phase_width">
+                        <div id="id_{{phase.id}}" class="card horizontal" [style.width]="0" [style.background-color]="phase.color">{{phase.name}} {{phase.percent_complete}}%
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="card col purple lighten-1 white-text s4 m4">
+        <span class="card-title">TOTAL PERCENTAGE</span>
+        <div class="card-content">
+            <h2>{{overall_percent_complete}} %</h2>
+        </div>
+    </div>
+</div>
